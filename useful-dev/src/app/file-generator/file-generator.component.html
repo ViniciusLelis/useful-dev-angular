@@ -1,0 +1,65 @@
+<div class="box">
+    <h1>Valid file generator</h1>
+
+    <h3>
+        Generate a random <b>valid</b> file with the desired format and size.
+    </h3>
+
+    <div class="box-action">
+        <div class="spinner-wrapper" *ngIf="isGeneratingFile()">
+            <mat-spinner></mat-spinner>
+            <h1 class="loading-description">Your file will be downloaded soon...</h1>
+        </div>
+
+        <form class="form-action" *ngIf="!isGeneratingFile()">
+            <div class="form-row">
+                <mat-form-field class="form-item" floatLabel=never>
+                    <mat-placeholder class="mat-input-placeholder">File name</mat-placeholder>
+                    <input matInput [(ngModel)]="fileName" name="fileNameInput">
+                </mat-form-field>
+
+                <mat-form-field class="stand-out">
+                    <mat-select [(value)]="selectedFormat">
+                        <mat-option value="0">TXT</mat-option>
+                        <mat-option value="1">PDF</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field class="form-item" floatLabel=never>
+                    <mat-placeholder class="mat-input-placeholder">File size</mat-placeholder>
+                    <input matInput type="number" (keydown)="keyDownNumberInput($event)"
+                        (paste)="pasteNumberInput($event)" [(ngModel)]="fileSize" name="fileSizeInput">
+                </mat-form-field>
+
+                <mat-form-field class="stand-out">
+                    <mat-select [(value)]="selectedUnit">
+                        <mat-option value="0">Bytes</mat-option>
+                        <mat-option value="1">KBytes</mat-option>
+                        <mat-option value="2">MBytes</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field class="form-item-area" floatLabel=never>
+                <mat-placeholder class="mat-input-placeholder">Random words to use, separated by comma (Optional)
+                </mat-placeholder>
+                <textarea matInput rows="4" [(ngModel)]="randomWordsSet" name="randomWordsTextArea"></textarea>
+            </mat-form-field>
+
+            <button class="submit-button" mat-flat-button (click)="generateFile()">
+                <mat-icon aria-hidden="false" aria-label="Website information">settings</mat-icon>
+                GENERATE
+            </button>
+        </form>
+    </div>
+
+    <p class="notes">You can use this file generator to create random, and more importantly <b>VALID</b>, files in any
+        of the available formats.
+        There are some tools that allow you to create a random file, but none of them create valid files and, therefore,
+        it's hard to make assumptions with them when they're used for testing.
+        <br>
+        This tool was created based on my necessity and I hope it helps solving yours as well.
+    </p>
+</div>

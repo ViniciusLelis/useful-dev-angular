@@ -1,0 +1,137 @@
+h1
+    font-weight: 500
+    color: #fafafa
+
+h3
+    text-align: center
+    color: #fafafa
+
+.box
+    width: 68vw
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 1.5em 0
+
+.box-action
+    border-radius: 8px
+    width: 80%
+    padding: 1em
+    background: #343434
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 2em
+    min-height: 30vh
+
+.form-action
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.form-row
+    display: flex
+    flex-direction: row
+    margin-bottom: 0.25em
+    align-items: center
+
+.form-item
+    margin-right: 1.5em
+    color: #fafafa
+
+.form-item ::ng-deep .mat-form-field-flex
+    border: solid 2px #df4816
+    border-radius: 4px
+    padding: 0 1em
+
+.form-item-area
+    width: 85%
+
+.form-item-area ::ng-deep .mat-form-field-label
+    padding: 1em
+
+textarea
+    background: #2c2c2c
+    border-radius: 4px
+    padding: 1.25em !important
+    color: #fafafa
+
+.submit-button
+    margin-top: 1.5em
+    background: #df4816
+    color: #fafafa
+    display: flex
+    align-items: center
+    font-weight: bold
+
+.notes
+    position: absolute
+    bottom: 0
+    width: 68vw
+    color: #fafafa
+
+.stand-out ::ng-deep .mat-form-field-flex
+    background-color: #df4816
+    border-radius: 4px
+    width: 6em
+
+.stand-out ::ng-deep .mat-form-field-infix
+    border-top: 0
+
+mat-form-field.stand-out
+    text-align: center
+
+mat-select
+    padding: 0.25em 0
+
+mat-option
+    color: #2c2c2c
+    font-weight: bold
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled)
+    color: #df4816
+
+::ng-deep .mat-select-value
+    color: white
+    font-weight: bold
+
+::ng-deep .mat-form-field-underline
+    display: none
+
+::ng-deep .mat-select-arrow, ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow
+    color: #fafafa
+
+.mat-input-element
+    caret-color: #df4816
+
+.mat-input-placeholder
+    color: #8d8d8d
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+/* Firefox */
+input[type=number]
+    -moz-appearance: textfield
+
+.spinner-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  z-index: 1001
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle
+  stroke: #df4816
+
+mat-spinner
+  margin-bottom: 3em
+
+.loading-description
+  font-weight: bold
+  color: #fafafa
+  font-size: 32px
